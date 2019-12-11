@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        * {
+            list-style: none;
+        }
+        
+        img {
+            width: 500px;
+            height: 500px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" v-oon>
+        <ul class="list"></ul>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script type="text/javascript">
+    Vue.directive("oon", {
+        inserted(dom, data) {
+            var oUl = document.querySelector('.list');
+            var arr = ['https://photo.tuchong.com/1502782/f/165873571.jpg', 'https://photo.tuchong.com/1502782/f/479004593.jpg', 'https://photo.tuchong.com/1707218/f/10269481.jpg', 'https://photo.tuchong.com/1502782/f/238486944.jpg', 'https://photo.tuchong.com/1502782/f/476775914.jpg', 'https://photo.tuchong.com/1502782/f/559941118.jpg', 'https://photo.tuchong.com/1502782/f/278005704.jpg', 'https://photo.tuchong.com/1502782/f/559941118.jpg', 'https://photo.tuchong.com/1502782/f/321194004.jpg', 'https://photo.tuchong.com/1502782/f/452134951.jpg', 'https://photo.tuchong.com/3281883/f/630261560.jpg', 'https://photo.tuchong.com/1502782/f/444270570.jpg', 'https://photo.tuchong.com/1319696/f/18575764.jpg'];
+
+            arr.forEach((item, index, arr) => {
+                var oLi = document.createElement('li');
+                var oImg = document.createElement('img');
+                oImg.setAttribute('data-url', item);
+                oLi.appendChild(oImg);
+                oUl.appendChild(oLi);
+            })
+            var aLi = oUl.querySelectorAll('li');
+            var ch = document.documentElement.clientHeight;
+
+            onscroll = () => {
+                var st = document.documentElement.scrollTop || document.body.scrollTop;
+
+                for (var i = 0, len = aLi.length; i < len; i++) {
+                    if (st + ch >= aLi[i].offsetTop) {
+                        var oImg = aLi[i].querySelector('img');
+                        oImg.src = oImg.getAttribute('data-url');
+                    }
+                }
+
+            }
+        }
+    })
+    new Vue({
+        el: '#box',
+    })
+</script>
+
+</html>

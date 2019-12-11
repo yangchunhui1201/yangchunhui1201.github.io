@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box" v-lee></div>
+
+</body>
+<script src="vue.js"></script>
+<script src="vue-resource.js"></script>
+<script type="text/javascript">
+    Vue.directive('lee', {
+        inserted(dom) {
+            dom.onmousedown = function(e) {
+                // 1.先记录下鼠标按下时在元素上的位置
+                var evt = e || event;
+                var downX = evt.offsetX;
+                var downY = evt.offsetY;
+                onmousemove = function(e) {
+                    var evt = e || event;
+                    var mouseX = evt.clientX - downX;
+                    var mouseY = evt.clientY - downY;
+
+                    box.style.left = mouseX + 'px';
+                    box.style.top = mouseY + 'px';
+
+                }
+            }
+
+            dom.onmouseup = function() {
+                onmousemove = null;
+            }
+        }
+    })
+    new Vue({
+        el: '#box'
+    })
+</script>
+
+</html>
