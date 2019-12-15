@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        
+        #myclo {
+            width: 1200px;
+            height: 420px;
+            overflow: hidden;
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #myclo .item {
+            transition: all .3s;
+            width: 200px;
+            float: left;
+            height: 300px;
+            transition: all 0.2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <myclo :varr="arr"></myclo>
+    </div>
+    <template id="myclo">
+        <div id="myclo">
+            <div class="item" v-for="(i,index) in arr" :key="index" :style="{backgroundImage:'url('+ i.src +')',backgroundSize:'cover',width:index==z_index?'600px':'200px'}" @click="btn(index)">
+               <p>{{i.title}}</p> 
+           </div> 
+        </div>
+    </template>
+</body>
+
+</html>
+<script src="vue.js"></script>
+<script>
+    Vue.component('myclo', {
+        template: "#myclo",
+        props: ['varr'],
+        data() {
+            return {
+                arr: this.varr,
+                z_index: 0
+            }
+        },
+        methods: {
+            btn(index) {
+                console.log(index)
+                this.z_index = index
+            }
+        }
+    })
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            arr: [{
+                src: "http://e.hiphotos.baidu.com/image/h%3D300/sign=a9e671b9a551f3dedcb2bf64a4eff0ec/4610b912c8fcc3cef70d70409845d688d53f20f7.jpg",
+
+            }, {
+                src: "http://f.hiphotos.baidu.com/image/h%3D300/sign=0c78105b888ba61ec0eece2f713597cc/0e2442a7d933c8956c0e8eeadb1373f08202002a.jpg",
+
+            }, {
+                src: "http://f.hiphotos.baidu.com/image/h%3D300/sign=d985fb87d81b0ef473e89e5eedc551a1/b151f8198618367aa7f3cc7424738bd4b31ce525.jpg",
+
+            }, {
+                src: "http://h.hiphotos.baidu.com/image/h%3D300/sign=0d33eab267224f4a4899751339f69044/b3b7d0a20cf431ad7427dfad4136acaf2fdd98a9.jpg",
+
+            }]
+        }
+    })
+</script>

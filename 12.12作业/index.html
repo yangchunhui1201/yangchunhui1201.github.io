@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bg {
+            background-color: #ccc;
+        }
+        
+        .box {
+            width: 700px;
+        }
+    </style>
+</head>
+
+<body style="background-color:red">
+    <div id="box" style="width: 500px;margin-left: 500px;">
+        <div v-for="(i,$index) in arr" style="display:inline-block; padding:0 20px;width: 125px;margin-top: 100px;font-size: 40px;" :bbb="i.cont" :tt="i.title" :class="index == $index?'bg':''" @click="index = $index">{{i.title}}</div>
+        <no1 :arr="arr" :index='index'></no1>
+    </div>
+    <template id="no1">
+        <div style="text-align: center;color: sandybrown;">
+        <div style="font-size: 20px;width: 500px;height: 300px;background-color: whitesmoke;" v-for="i in arr1" v-show="i.index == index">
+            {{i.cont}}
+        </div>
+    </div>
+
+    </template>
+</body>
+<script src="vue.js"></script>
+<script>
+    Vue.component('no1', {
+        template: '#no1',
+        props: ['bbb', 'arr', 'index'],
+        data() {
+            return {
+                ccc: this.bbb,
+                arr1: this.arr,
+            }
+        }
+    })
+    new Vue({
+        el: "#box",
+        data: {
+            index: 0,
+            arr: [{
+                title: '标题一',
+                cont: '内容一',
+                index: 0
+            }, {
+                title: '标题二',
+                cont: '内容二',
+                index: 1
+            }, {
+                title: '标题三',
+                cont: '内容三',
+                index: 2
+            }]
+        }
+    })
+</script>
+
+</html>

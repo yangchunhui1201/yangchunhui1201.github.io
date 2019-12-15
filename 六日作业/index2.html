@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: grid;
+        }
+    </style>
+</head>
+
+<body style="background-color: black;">
+    <div class="box">
+        <no1></no1>
+    </div>
+
+    <template id="no1">
+        <div>
+            <div style="width: 100%; height: 78px;">
+                <div style="width: 1190px;height: 78px;margin: auto;">
+                    <div style="width: 180px; height: 49px;float: left;">
+                        <!-- <img  src="https://ccdn.goodq.top/caches/76b523e47b518e3280b3a453638be094/aHR0cHM6Ly81ZDM5NjllNDU0MTBjLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvNmMwMWZiNzVjMmNlMjZlZGU4YmEwNWNlNzBhMzA1N2YucG5n.png" alt=""style="width: 100%; height: 100%;margin-top:14px;"> -->
+                        <img class="preload-me" src="https://ccdn.goodq.top/caches/6e3f1e3d4f66af217d961de064f1e878/aHR0cDovLzVkYTE4YTZmYTZiYmQudDc0LnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxOS8xMC8yNDdjMmI4ZDMyYTI3NjQzYTE0NzA0YWVlMzBiMzcyOC5wbmc_p_p100_p_3D.png" style="width:50px; height:54px;margin-top: 14px;" alt="个人简历模板">
+                    </div>
+                    <div style="height: 78px;float: right;margin-right: 80px;">
+                        <div v-for='i in arr1' style="float: left; margin-left: 40px; line-height: 78px; font-size: 14px;color: white;">
+                                {{i}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 1190px;margin: auto;height: 700px;">
+                <div style="width: 436px;height: 400px;float: left;">
+                    <div style="margin-top: 90px;border-top: 1px solid wheat;border-bottom: 1px solid wheat;padding-top: 20px;padding-bottom: 20px;">
+                        <p style="color: orange;">90后文艺小青年</p>
+                        <p style="font-size:50px;line-height: 74px;color: white;">践行惠普金融</p>
+                        <p style="font-size: 50px;line-height: 74px;color: white;">助理美好生活</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 14px;line-height: 40px;">我们的网站构建器，将传统的编码工作转化为直观的拖拽操作和文字录入。在这里，您仅需花上10分钟便可以完成一个H5响应式网站，您会发现完全不需要编写一行代码，这就是起飞页自助建站的神奇之处。</p>
+                    </div>
+                    <div style="margin-top: 40px;">
+                        <button style="width: 152px;height: 44px;border-radius: 44px;border: none;background-color: rgb(10, 110, 242);font-size:15;color: rgb(255, 255, 255);">　详细了解我 →　</button>
+                    </div>
+                </div>
+                <div style="width: 616px;height: 400px;float: left;margin-left: 80px;">
+                    <img width="590" height="709" src="https://ccdn.goodq.top/caches/6e3f1e3d4f66af217d961de064f1e878/aHR0cDovLzVkYTE4YTZmYTZiYmQudDc0LnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxOS8xMC8yZjJlYmFkYjQ3OTJkOWNiNWZhMjk5NWU2M2M2OWQzMy5wbmc_p_p100_p_3D.png" class="front_image  attachment-full" alt="QQ图片20191011174816-2" title="" description="" data-title="QQ图片20191011174816-2" src-img="" style="">
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="news">
+        <div>
+        <div style="min-height: 810px;padding-top: 90px;padding-bottom: 90px;">
+        <div style="width: 1190px;margin:0 auto;min-height: 900px;overflow: hidden;" class="nop">
+        <div>
+        <slot name="no6"></slot>
+        
+        </div>
+        <div>
+        <slot name="no7"></slot>
+        
+        </div>
+        </div>
+        </div>
+        </div>
+        </template>
+    <news>
+        <div style="width: 1190px;margin: auto;text-align: center;padding-bottom: 15px;" slot="no6">
+            <img src="https://ccdn.goodq.top/caches/569b046fc16663a994ea33d5a2a60b54/aHR0cHM6Ly81NGQ0YTQ2MjlmYjZiLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTUvMDYvZDVkNGNjN2IwOWQxODQzNTE3YWNjOTM2MWY4ZjY2NWUtNDUweDQ1MC5qcGc_p_p100_p_3D.jpg" alt="" width="100%"
+            />
+            <p style="line-height: 30px;color: red;font-weight: bold;">岁月</p>
+            <p style="line-height: 20px;font-size: 12px;color: whitesmoke;">哪知岁月总是催人老，等到知时已迟了</p>
+        </div>
+        <div class="zhong" style="width: 1190px;margin: auto;text-align: center;padding-bottom: 15px;" slot="no6">
+            <img src="https://ccdn.goodq.top/caches/569b046fc16663a994ea33d5a2a60b54/aHR0cHM6Ly81NGQ0YTQ2MjlmYjZiLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTUvMDYvYzk1MTI1NjVlZjYxOTRjYTY2NGRjNDFlYzBkZTdhNTMtNDUweDQ1MC5qcGc_p_p100_p_3D.jpg" alt="" width="100%"
+            />
+            <p style="line-height: 30px; color: red;font-weight: bold;">风景</p>
+            <p style="line-height: 20px;font-size: 12px;color: whitesmoke;">再美的风景，也需要欣赏他的人</p>
+        </div>
+        <div style="width: 1190px;margin: auto;text-align: center;padding-bottom: 15px;" slot="no6">
+            <img src="https://ccdn.goodq.top/caches/569b046fc16663a994ea33d5a2a60b54/aHR0cHM6Ly81NGQ0YTQ2MjlmYjZiLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTUvMDYvYmJkOTdiMDBjNTM5ODAxZTMyMzE3YWI1NTA4NjdlYzQtNDUweDQ1MC5qcGc_p_p100_p_3D.jpg" alt="" width="100%"
+            />
+            <p style="color: red;line-height: 30px;font-weight: bold;">旅游日记</p>
+            <p style="line-height: 20px;font-size: 12px;color: whitesmoke;">旅行重要的不是终点，而是过程</p>
+        </div>
+        <div style="width: 1190px;margin: auto;text-align: center;padding-bottom: 15px;" slot="no7">
+            <img src="https://ccdn.goodq.top/caches/569b046fc16663a994ea33d5a2a60b54/aHR0cHM6Ly81NGQ0YTQ2MjlmYjZiLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTUvMDYvNTI4OTUzNzI3ZWYzYTRlMWM0NDFjNjA3ODUzNGMzOWItNDUweDQ1MC5qcGc_p_p100_p_3D.jpg" alt="" width="100%"
+            />
+            <p style="color: red;line-height: 30px;font-weight: bold;">相爱的人</p>
+            <p style="line-height: 20px;font-size: 12px;color: whitesmoke;">犹如黑暗中的烛光，照亮了整个人类的历史</p>
+        </div>
+        <div class="zhong" style="width: 1190px;margin: auto;text-align: center;padding-bottom: 15px;" slot="no7">
+            <img src="https://ccdn.goodq.top/caches/569b046fc16663a994ea33d5a2a60b54/aHR0cHM6Ly81NGQ0YTQ2MjlmYjZiLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTUvMDYvNWRiNThlN2IyMWI5MDY0Y2E1YWY0OWVmZTdiN2E4YjItNDUweDQ1MC5qcGc_p_p100_p_3D.jpg" alt="" width="100%"
+            />
+            <p style="line-height: 30px; color: red;font-weight: bold;">建筑</p>
+            <p style="line-height: 20px;font-size: 12px;color: whitesmoke;">不同的是外形，相同的是内在</p>
+        </div>
+        <div style="width: 1190px;margin: auto;text-align: center;padding-bottom: 15px;" slot="no7">
+            <img src="https://ccdn.goodq.top/caches/569b046fc16663a994ea33d5a2a60b54/aHR0cHM6Ly81NGQ0YTQ2MjlmYjZiLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTcvMDYvMjA2YjI3ODE2Yjc0NmM0NzIzYTRkM2MyN2YxNjA4OWEtNDUweDQ1MC5qcGc_p_p100_p_3D.jpg" alt="" width="100%"
+            />
+            <p style="color: red;line-height: 30px;font-weight: bold;">神奇的自然</p>
+            <p style="line-height: 20px;font-size: 12px;color: whitesmoke;">有一种神奇叫做孤独的孕育</p>
+        </div>
+    </news>
+    <div style="min-height: 200px;background: #333;margin-top: 70px;text-align: center;padding-top: 50px;">
+        <img src="https://ccdn.goodq.top/caches/569b046fc16663a994ea33d5a2a60b54/aHR0cHM6Ly81NGQ0YTQ2MjlmYjZiLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTQvMDYvMDRmOTgyOTk1ZTlhMDNhMTZkNzc3Yjk5ZTU0YTg1YWQtMjEyeDkwLnBuZw_p_p100_p_3D_p_p100_p_3D.png" alt=""
+        />
+        <ul style="text-align: center;list-style: none;padding: 20px 0 0 0;">
+            <!-- <li style="display: inline-block"><span style="margin: 0 5px;color: #fff;font-size: 30px;" class="iconfont">&#xe677;</span></li>
+            <li style="display: inline-block"><span style="margin: 0 5px;color: #fff;font-size: 30px;" class="iconfont">&#xe600;</span></li>
+            <li style="display: inline-block"><span style="margin: 0 5px;color: #fff;font-size: 30px;" class="iconfont">&#xe64c;</span></li>
+            <li style="display: inline-block"><span style="margin: 0 5px;color: #fff;font-size: 30px;" class="iconfont">&#xe6c1;</span></li>
+            <li style="display: inline-block"><span style="margin: 0 5px;color: #fff;font-size: 30px;" class="iconfont">&#xe63e;</span></li> -->
+        </ul>
+        <p style="color: #FFFFFF;line-height: 60px;">Copyright 2017 个人摄影网站. All rights reserved.</p>
+    </div>
+
+
+</body>
+<script src="vue.js"></script>
+<script>
+    Vue.component('no1', {
+        template: '#no1',
+        data() {
+            return {
+                arr1: ['首页', '关于我', '个人项目', '领导评价', '荣誉奖项', '联系方式', '合作伙伴']
+            }
+        }
+    })
+    Vue.component('news', {
+        template: '#news'
+    })
+    new Vue({
+        el: '.box',
+    })
+</script>
+
+</html>

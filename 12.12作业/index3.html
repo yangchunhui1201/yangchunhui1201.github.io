@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        img {
+            width: 100%;
+            height: 400px;
+        }
+        
+        .no1 {
+            width: 100%;
+            min-height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .no2 {
+            position: absolute;
+            transition: all .3s;
+            top: 0;
+        }
+        
+        .l,
+        .r {
+            width: 40px;
+            text-align: center;
+            line-height: 80px;
+            position: absolute;
+            top: 50%;
+            margin-top: -40px;
+            color: #FFFFFF;
+            font-size: 35px;
+        }
+        
+        .l {
+            left: 0;
+            color: red;
+            font-size: 30px;
+        }
+        
+        .r {
+            right: 0;
+            color: red;
+            font-size: 30px;
+        }
+        
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" v-cloak="">
+        <lunbo :imgarr="arr"></lunbo>
+    </div>
+    <template id="box1">
+			<div>
+				<div style="width:500px; margin: 0 auto;margin-top: 200px;">
+					<div class="no1" >
+						<div class="no2" :style="{width: 100*arr.length+'%',left:index*-100+'%'}">
+							<img v-for="i in arr" :src="i" :style="{width: 100/arr.length+'%'}" />
+						</div>
+						<div class="l" @click="pre"> <</div> 
+						<div class="r" @click="next"> > </div>
+					</div>
+				</div>
+			</div>
+		</template>
+</body>
+<script src="vue.js"></script>
+<script>
+    Vue.component('lunbo', {
+            template: '#box1',
+            mounted() {
+                var no2_dom = document.getElementsByClassName('no2')[0].offsetHeight
+                this.no2_dom = no2_dom
+            },
+            methods: {
+                next() {
+                    this.index++
+                        if (this.index >= this.arr.length) {
+                            this.index = 0
+                        }
+                },
+                pre() {
+                    this.index--
+                        if (this.index <= -1) {
+                            this.index = this.arr.length - 1
+                        }
+                }
+            },
+            props: ['imgarr'],
+            data() {
+                return {
+                    no2_dom: 0,
+                    index: 0,
+                    arr: this.imgarr
+                }
+            }
+        }),
+        new Vue({
+            el: '#box',
+            data: {
+                arr: [
+
+                    'http://p20.qhimgs3.com/sdm/240_240_/t01bd54ee4d5985c258.jpg?t=1566301755',
+                    'http://p17.qhimgs3.com/sdm/240_240_/t01d2b5385c603b2802.jpg?t=1575814956',
+                    'http://pic1.sc.chinaz.com/Files/pic/pic9/201912/zzpic21830_s.jpg'
+                ]
+            }
+        })
+</script>
+
+</html>
