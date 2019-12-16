@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .quan {
+            font-size: 30px;
+            float: left;
+        }
+        
+        .active {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <el-rate v-model="va"></el-rate>
+    </div>
+    <template id='rate'>
+        <div>
+            <span v-for="(i,index) in 5" class="quan" :class="{'active':a>index}" @click="dian(index)">&#9733;</span>
+        </div>
+    </template>
+</body>
+<script src="vue.js"></script>
+<script>
+    Vue.component('el-rate', {
+        template: '#rate',
+        props: {
+            value: {}
+        },
+        data() {
+            return {
+                is: this.value,
+                a: 0,
+            }
+        },
+        methods: {
+            dian(index) {
+                if (index == this.is) {
+                    this.a = 0
+                    this.is = null
+                } else {
+                    this.a = index + 1
+                    this.$emit('input', this.value)
+                }
+
+            }
+        }
+    })
+    new Vue({
+        el: '#box',
+        data() {
+            return {
+                va: 0,
+            }
+        }
+    })
+</script>
+
+</html>

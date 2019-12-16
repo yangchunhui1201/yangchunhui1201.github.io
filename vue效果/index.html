@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>开关</title>
+    <style>
+        .yuan {
+            display: inline-block;
+            width: 27px;
+            height: 27px;
+            border-radius: 50% 50%;
+            background: #fff;
+            position: absolute;
+            top: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <el-switch v-model="va"></el-switch>
+    </div>
+    <template id="switch">
+        <div>
+            <div :style="{background:value==0?'#ff4949':'#13ce66'}" style="width:60px;height:30px;border:1px solid #000;border-radius:15px;position: relative;" @click="dian"> 
+                <span class="yuan" :style="{left:value==0?'0px':'33px'}"></span>
+            </div>
+        </div>
+    </template>
+</body>
+<script src="vue.js"></script>
+<script>
+    Vue.component('el-switch', {
+        template: '#switch',
+        props: ['value'],
+        methods: {
+            dian() {
+                this.va = this.va == 1 ? 0 : 1;
+                this.$emit('input', this.va)
+            },
+        }
+    })
+    new Vue({
+        el: '#box',
+        data() {
+            return {
+                va: 0
+            }
+        }
+    })
+</script>
+
+</html>
