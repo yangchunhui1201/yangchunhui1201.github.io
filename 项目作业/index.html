@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>医疗器械网站模板</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="dist/css/swiper.min.css">
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=7vXADTfpdwLh1cBFGDsxls0zEdMyQn1n" ></script>
+</head>
+<body>
+	<div id="box" v-cloak>
+		<div class="header">
+			<img src="https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNy8wMi80NWEyYzAxMDEyZjkzOTA0ZGFlY2ZjMGFkOWJkOGE5Ni5wbmc_p_p100_p_3D.png" alt="">
+			<ul>
+				<li  v-for="(i,$index) in arr" @click="type=$index" :class="type==$index?'li':''"><a :href="i.a"><span>{{i.b}}</span></a></li>
+			</ul>
+		</div>
+		<div style="min-height: 500px;">
+			<router-view></router-view>
+		</div>
+		<div class="footer">
+			<img src="https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNy8wMi80NWEyYzAxMDEyZjkzOTA0ZGFlY2ZjMGFkOWJkOGE5Ni0xMDF4MzYucG5n.png" alt="">
+			<div>
+				<p>
+					<span>版权所有 ©2014   地址：上海市松江区佘山林荫大道18号    京ICP备********号</span>
+				</p>
+			</div>
+		</div>
+	</div>
+	<template id="no1">
+		<div>
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="http://54d4a3b210cae.t73.qifeiye.com/qfy-content/uploads/2014/06/8f252a9db700ba559288dc9bbb4d655b.jpg" alt=""></div>
+					<div class="swiper-slide"><img src="http://54d4a3b210cae.t73.qifeiye.com/qfy-content/uploads/2014/06/c8d6f54e0799fe165eb5d21936cdcf66.jpg" alt=""></div>
+				</div>
+				<!-- 如果需要分页器 -->
+				<div class="swiper-pagination"></div>
+
+				
+			</div>
+			<div style="overflow: hidden;padding:0 265px;margin-top: 30px;">
+				<div v-for="i in arr" style="float:left;margin-right: 20px;text-align: center;">
+					<img :src="i.a" alt="" style="display: block;width:224px;height:141px;margin-bottom: 10px;">
+					<span style="color: #A9A9A9;font-size: 14px;cursor: pointer;font-family: 微软雅黑, Helvetica, Arial, Verdana, sans-serif;font-weight:bold;">{{i.b}}</span>
+					<span style="color: rgb(61, 208, 221);font-size: 12px;font-weight:bold;cursor: pointer;">{{i.c}}</span>
+				</div>
+			</div>
+			<div style="width:980px;height:20px;border-bottom: 1px #ccc solid;margin-left:254px;margin-top: 8px;margin-bottom: 20px;">
+			</div>
+			<div style="overflow: hidden;padding:0 254px;box-shadow: 0px;margin-bottom: 30px;">
+				<div v-for="i in arr1" style="width:492px;height:164px;float:left;margin-right: 10px;border-bottom: .5px #ccc solid;">
+					<img style="width:136px;height:122px;float:left;margin-right: 24px;" :src="i.a" alt="">
+					<div style="float:left;width:312px;height:150px;">
+						<h3 style="font-family: 微软雅黑;color: rgb(105, 105, 105);font-weight:700;font-size:14px;margin-bottom:15px;">{{i.b}}</h3>
+						<p style="width:280px;font-size: 12px;color: #808080;line-height: 1.5em;font-family: 'å¾®è½¯é›…é»‘',Helvetica,Arial,Verdana,sans-serif;">{{i.c}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</template>
+	<template id="no2">
+		<div>
+			<div><img style="width:100%;height:270px;" src="https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS9kYjQ5NTE0ODdlN2RhNmM0YWNiNjc5ODI2NDQ5YjlkZC5qcGc_p_p100_p_3D.jpg" alt=""></div>
+			<div style="width:1024px;height:39px;margin:0 auto;border-bottom: 1px #ccc solid;line-height: 39px;text-align: right!important;margin-bottom: 20px;">
+				<span style="font-size: 14px;color: #727272;font-weight: normal;font-style: normal;font-family: 默认;">
+					您目前的位置：首页 > 关于我们
+				</span>
+			</div>
+			<div style="margin:0 auto;overflow: hidden;width:1024px;">
+				<div style="float:left;">
+					<div style="width:155px;height:64px;border-bottom: 4px #3191cc solid;">
+						<h3 style="font-family: 微软雅黑;font-size: 26px;font-weight: normal;font-style: normal;color: #333333;padding: 0 5px 0px 0;display: block;padding: 0 5px 0px 0;vertical-align: bottom;">关于我们</h3>
+						<span style="font-family: century gothic;font-size: 14px;font-weight: normal;font-style: normal;color: #bababa;display: block;padding: 2px;vertical-align: bottom;">ABOUT US</span>
+					</div>
+					<p  v-for="(i,$index) in arr"  :class="index==$index?'bg':''" style="margin-top: 15px;"><a style="text-decoration: none;font-family: 微软雅黑;" :href="i.b" class="a" @click="index=$index" :class="index==$index?'b':''"><span>{{i.a}}</span></a></p>
+					
+				</div>
+				<div style="margin-left:50px;float:left;width:756px;min-height:50px;">
+					<router-view></router-view>	
+				</div>
+			</div>
+		</div>
+	</template>
+	<template id="no3">
+		<div>
+			<div><img style="width:100%;height:270px;" src="https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS9kYjQ5NTE0ODdlN2RhNmM0YWNiNjc5ODI2NDQ5YjlkZC5qcGc_p_p100_p_3D.jpg" alt=""></div>
+			<div style="width:1024px;height:39px;margin:0 auto;border-bottom: 1px #ccc solid;line-height: 39px;text-align: right!important;margin-bottom: 20px;">
+				<span style="font-size: 14px;color: #727272;font-weight: normal;font-style: normal;font-family: 默认;">
+					您目前的位置：首页 > 产品展示
+				</span>
+			</div>
+			<div style="margin:0 auto;width:1024px;min-height: 300px;">
+				<div style="float:left;">
+					<div style="width:155px;height:64px;border-bottom: 4px #3191cc solid;">
+						<h3 style="font-family: 微软雅黑;font-size: 26px;font-weight: normal;font-style: normal;color: #333333;padding: 0 5px 0px 0;display: block;padding: 0 5px 0px 0;vertical-align: bottom;">产品展示</h3>
+						<span style="font-family: century gothic;font-size: 14px;font-weight: normal;font-style: normal;color: #bababa;display: block;padding: 2px;vertical-align: bottom;">ABOUT US</span>
+					</div>
+					<p  v-for="(i,$index) in arr"  :class="index==$index?'bg':''" style="margin-top: 15px;"><a style="text-decoration: none;font-family: 微软雅黑;" :href="i.b" class="a" @click="index=$index" :class="index==$index?'b':''"><span>{{i.a}}</span></a></p>
+					
+				</div>
+				<div style="margin-left:50px;float:left;width:756px;min-height:50px;">
+					<router-view></router-view>	
+				</div>
+			</div>
+		</div>
+	</template>
+	<template id="no4">
+		<div>
+			<div>
+			<div><img style="width:100%;height:270px;" src="https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS9kYjQ5NTE0ODdlN2RhNmM0YWNiNjc5ODI2NDQ5YjlkZC5qcGc_p_p100_p_3D.jpg" alt=""></div>
+			<div style="width:1024px;height:39px;margin:0 auto;border-bottom: 1px #ccc solid;line-height: 39px;text-align: right!important;margin-bottom: 20px;">
+				<span style="font-size: 14px;color: #727272;font-weight: normal;font-style: normal;font-family: 默认;">
+					您目前的位置：首页 > 新闻动态
+				</span>
+			</div>
+			<div style="margin:0 auto;width:1024px;min-height: 830px;">
+				<div style="float:left;">
+					<div style="width:155px;height:64px;border-bottom: 4px #3191cc solid;">
+						<h3 style="font-family: 微软雅黑;font-size: 26px;font-weight: normal;font-style: normal;color: #333333;padding: 0 5px 0px 0;display: block;padding: 0 5px 0px 0;vertical-align: bottom;">新闻动态</h3>
+						<span style="font-family: century gothic;font-size: 14px;font-weight: normal;font-style: normal;color: #bababa;display: block;padding: 2px;vertical-align: bottom;">NEWS</span>
+					</div>
+					<p  v-for="(i,$index) in arr"  :class="index==$index?'bg':''" style="margin-top: 15px;"><a style="text-decoration: none;font-family: 微软雅黑;" :href="i.b" class="a" @click="index=$index" :class="index==$index?'b':''"><span>{{i.a}}</span></a></p>
+					
+				</div>
+				<div style="margin-left:50px;float:left;width:756px;min-height:50px;">
+					<router-view></router-view>	
+				</div>
+			</div>
+		</div>
+	</template>
+	<template id="no5">
+		<div>
+			<div>
+			<div><img style="width:100%;height:270px;" src="https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS9kYjQ5NTE0ODdlN2RhNmM0YWNiNjc5ODI2NDQ5YjlkZC5qcGc_p_p100_p_3D.jpg" alt=""></div>
+			<div style="width:1024px;height:39px;margin:0 auto;border-bottom: 1px #ccc solid;line-height: 39px;text-align: right!important;margin-bottom: 20px;">
+				<span style="font-size: 14px;color: #727272;font-weight: normal;font-style: normal;font-family: 默认;">
+					您目前的位置：首页 > 联系我们
+				</span>
+			</div>
+			<div style="margin:0 auto;width:1024px;min-height: 530px;">
+				<div style="float:left;">
+					<div style="width:155px;height:64px;border-bottom: 4px #3191cc solid;">
+						<h3 style="font-family: 微软雅黑;font-size: 26px;font-weight: normal;font-style: normal;color: #333333;padding: 0 5px 0px 0;display: block;padding: 0 5px 0px 0;vertical-align: bottom;">联系我们</h3>
+						<span style="font-family: century gothic;font-size: 14px;font-weight: normal;font-style: normal;color: #bababa;display: block;padding: 2px;vertical-align: bottom;">CONTACT US</span>
+					</div>
+					<p  v-for="(i,$index) in arr"  :class="index==$index?'bg':''" style="margin-top: 15px;"><a style="text-decoration: none;font-family: 微软雅黑;" :href="i.b" class="a" @click="index=$index" :class="index==$index?'b':''"><span>{{i.a}}</span></a></p>
+					
+				</div>
+				<div style="margin-left:50px;float:left;width:756px;min-height:50px;">
+					<router-view></router-view>	
+				</div>
+			</div>
+		</div>
+	</template>
+	<template id="no6">
+		<div>
+			<div v-for="i in arr" style="margin-bottom:30px;">
+				<span style="font-size: 14px;color: #808080;">{{i}}</span>
+			</div>
+			<img src="https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNC8wNi9wMTYuanBnP2F0dGFjaG1lbnRfaWQ9NTkxNw_p_p100_p_3D_p_p100_p_3D.jpg" alt="">
+			<p style="font-size: 13px;color: #A9A9A9;text-align:center;margin-top: 20px;">最新进口治疗仪器</p>
+		</div>
+	</template>
+	<template id="no7">
+		<div style="height:600px;">
+			<div v-for="i in arr" style="width:756px;height:120px;margin-bottom: 10px;">
+				<h3 style="font-size: 16px;font-family: 700;color:#333;">{{i.a}}</h3>
+				<p style="font-size: 15px;color:#808080;">{{i.b}}</p>
+				<p style="font-size: 15px;color:#808080;">{{i.c}}</p>
+				<p style="font-size: 15px;color:#808080;">{{i.d}}</p>
+				<p style="font-size: 15px;color:#808080;">{{i.e}}</p>
+			</div>
+		</div>
+	</template>
+	<template id="no8">
+		<div>
+			<div  v-for="(i,$index) in arr" style="float:left;width:241px;height:181px;margin-right:10px;position: relative;"  @mouseover="index=$index"  @mouseout="index='1'" >
+				<div style="width:241px;height:181px;position: absolute;top:0;left:0;" :class="index==$index?'chan':''"></div>
+				<div class="div4" style="width:241px;height:181px;position: absolute;top:0;left:0;" :class="index==$index?'pin':''"></div>
+				<img :src="i.a" alt="" style="width:100%;height:100%;">
+				<div style="z-index: 999;text-align: center;"><p style="color: #373A41;font-size: 15px;line-height: 21px;">{{i.c}}</p></div>
+			</div>
+		</div>
+	</template>
+	<template id="no9">
+		<div>
+			<div  v-for="(i,$index) in arr" style="float:left;width:241px;height:181px;margin-right:10px;position: relative;"  @mouseover="index=$index"  @mouseout="index='1'" >
+				<div style="width:241px;height:181px;position: absolute;top:0;left:0;" :class="index==$index?'chan':''"></div>
+				<div class="div4" style="width:241px;height:181px;position: absolute;top:0;left:0;" :class="index==$index?'pin':''"></div>
+				<img :src="i.a" alt="" style="width:100%;height:100%;">
+				<div style="z-index: 999;text-align: center;"><p style="color: #373A41;font-size: 15px;line-height: 21px;">{{i.c}}</p></div>
+			</div>
+		</div>
+	</template>
+	<template id="no10">
+		<div>
+			<div  v-for="(i,$index) in arr" style="float:left;width:241px;height:181px;margin-right:10px;position: relative;"  @mouseover="index=$index"  @mouseout="index='1'" >
+				<div style="width:241px;height:181px;position: absolute;top:0;left:0;" :class="index==$index?'chan':''"></div>
+				<div class="div4" style="width:241px;height:181px;position: absolute;top:0;left:0;" :class="index==$index?'pin':''"></div>
+				<img :src="i.a" alt="" style="width:100%;height:100%;">
+				<div style="z-index: 999;text-align: center;"><p style="color: #373A41;font-size: 15px;line-height: 21px;">{{i.c}}</p></div>
+			</div>
+
+		</div>
+	</template>
+	<template id="no11">
+		<div>
+			<div v-for="i in arr" style="overflow: hidden;margin-bottom: 30px;padding-bottom: 20px;border-bottom: .7px #ccc solid;">
+				<div style="float:left;width:140px;height:110px;margin-right: 18px;cursor: pointer;"><img :src="i.b" alt=""></div>
+				<div style="float:left;width:590px;">
+					<p style="color: #1e1e1e;font-size: 18px;line-height: 18px;margin-bottom: 13px;">{{i.a}}</p>
+					<p style="color: #999999;font-size: 12px;line-height: 12px;margin-bottom: 15px;">{{i.c}}</p>
+					<span style="color: #939393;font-size: 13px;">{{i.d}}</span>
+				</div>
+			</div>
+		</div>
+	</template>
+	<template id="no12">
+		<div>
+			<div v-for="i in arr" style="overflow: hidden;margin-bottom: 30px;padding-bottom: 20px;border-bottom: .7px #ccc solid;">
+				<div style="float:left;width:140px;height:110px;margin-right: 18px;cursor: pointer;"><img :src="i.b" alt=""></div>
+				<div style="float:left;width:590px;">
+					<p style="color: #1e1e1e;font-size: 18px;line-height: 18px;margin-bottom: 13px;">{{i.a}}</p>
+					<p style="color: #999999;font-size: 12px;line-height: 12px;margin-bottom: 15px;">{{i.c}}</p>
+					<span style="color: #939393;font-size: 13px;">{{i.d}}</span>
+				</div>
+			</div>
+		</div>
+	</template>
+	<template id="no13">
+		<div>
+			<div v-for="i in arr">
+				<strong>{{i.a}}</strong>
+				<p style="font-size: 14px;font-family: '微软雅黑',Helvetica,Arial,Verdana,sans-serif;color: #808080;margin-top: 10px;">{{i.b}}</p>
+				<p style="font-size: 14px;font-family: '微软雅黑',Helvetica,Arial,Verdana,sans-serif;color: #808080;">{{i.c}}</p>
+				<p style="font-size: 14px;font-family: '微软雅黑',Helvetica,Arial,Verdana,sans-serif;color: #808080;">{{i.d}}</p>
+
+			</div>
+			<div style="margin-top:13px;width:756px;height:378px;"><iframe src="https://map.baidu.com/@12748538.99,4559724.44,12z" width="100%"height="100%"></iframe></div></div>
+		</div>
+	</template>
+	<template id="no14">
+		<div>
+			<h3 style="color: #5CBCE7;font-size: 20px;margin-bottom: 12px;">网站设计师</h3>
+			<span style="font-size: 15px;font-weight: 700;">岗位职责</span>
+			<div style="margin-bottom: 30px;">
+				<p v-for="i in arr" style="margin-top: 5px;font-size: 15px;color: #808080; ">
+				{{i.a}}
+			</p>
+			</div>
+			<span style="font-size: 15px;font-weight: 700;">任职要求</span>
+			<p v-for="i in arr1" style="margin-top: 5px;font-size: 15px;color: #808080; ">
+				{{i.a}}
+			</p>
+		</div>
+	</template>
+</body>
+</html>
+<script src="vue.js"></script>
+<script src="vue-router.js"></script>
+<script src="dist/js/swiper.min.js"></script>
+<script>
+	var routes=[
+	{
+		path:'/',
+		component:{
+			template:'#no1',
+			data(){
+				return {
+					arr:[
+						{
+							a:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8wMi9mYWQ1NjhhYWU0NDQ4MmUxNDYyM2M2MmJjYjJlYmQyMi5wbmc_p_p100_p_3D.png',
+							b:'关于我们 /',
+							c:'ABOUT'
+						},
+						{
+							a:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8wMi9mYjk0NmIzY2E2ZWM2YzYyNWMyMTc5MDE4ZGIzYTAzMS5wbmc_p_p100_p_3D.png',
+							b:'新闻动态 / ',
+							c:'NEWS'
+						},
+						{
+							a:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMC80ODM4MWM1OTMyNDJiZWE3MTQxYjhhMDhkZTI4ZWY3Zi5qcGc_p_p100_p_3D.jpg',
+							b:'联系我们 /',
+							c:'CONTACT'
+						},
+						{
+							a:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8wMi9lZDgwNWI0MjUxYzlkNzcxNTdlZjg4NzI4NzhmYWI3Mi5wbmc_p_p100_p_3D.png',
+							b:'产品展示 /',
+							c:' PRODUCTS'
+						}
+					],
+					arr1:[
+						{
+							a:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS80YmY2MDIwMGY1ZmZhOWUwM2JiYzFiZWFiMjgxY2FhZi5qcGc_p_p100_p_2FYXR0YWNobWVudF9pZD02NTE3.jpg',
+							b:'	产品名称#1',
+							c:'其主要门类包括：化学原料药及制剂、中药材、中药饮片、中成药、抗生素、生物制品、生化药品、放射性药品、医疗器械、卫生材料、制药机械、药用包装材料及医药商业。'
+						},
+						{
+							a:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS9lN2I3MDczNWQ1NWU1ZGYxNGUxODI5ODEwMzMwYjYxNS5qcGc_p_p100_p_2FYXR0YWNobWVudF9pZD02NTE4.jpg',
+							b:'	产品名称#2',
+							c:'其主要门类包括：化学原料药及制剂、中药材、中药饮片、中成药、抗生素、生物制品、生化药品、放射性药品、医疗器械、卫生材料、制药机械、药用包装材料及医药商业。'
+						}
+					]
+				}
+			}
+		}
+	},
+	{
+		path:'/no2',
+		component:{
+			template:'#no2',
+			data(){
+				return {
+					arr:[
+						{
+							a:'公司概括',
+							b:'#/no2/'
+						},
+						{
+							a:'公司荣誉',
+							b:'#/no2/6'
+						}
+					],
+					index:''
+				}
+			}
+		},
+		children:[
+				{
+					path:'/',
+					component:{
+						template:'#no6',
+						data(){
+							return {
+								arr:[
+									'公司顺应医药流通发展趋势，投资2.3亿元建设省内具有领先水平的现代医药物流中心，精心打造信息化管理、专业化服务、规模化运作的现代医药流通企业，立足波，辐射，承担起浙江省的药品配送，成为物流平台，保障人民群众的用药需求。作为久负盛名的医药商业企业，股份将站在一个全新的历史起点、跨越新高度，以创新求发展，为打造“百年”企业，开创新的历史篇章。',
+									'公司顺应医药流通发展趋势，投资2.3亿元建设省内具有领先水平的现代医药物流中心，精心打造信息化管理、专业化服务、规模化运作的现代医药流通企业，立足波，辐射，承担起浙江省的药品配送，成为物流平台，保障人民群众的用药需求。作为久负盛名的医药商业企业，股份将站在一个全新的历史起点、跨越新高度，以创新求发展，为打造“百年”企业，开创新的历史篇章。',
+									'公司顺应医药流通发展趋势，投资2.3亿元建设省内具有领先水平的现代医药物流中心，精心打造信息化管理、专业化服务、规模化运作的现代医药流通企业，立足波，辐射，承担起浙江省的药品配送，成为物流平台，保障人民群众的用药需求。作为久负盛名的医药商业企业，股份将站在一个全新的历史起点、跨越新高度，以创新求发展，为打造“百年”企业，开创新的历史篇章。'
+								]
+							}
+						}
+
+				}
+				},
+				{
+					path:'6',
+					component:{
+						template:'#no7',
+						data(){
+							return {
+								arr:[
+									{
+										a:'2016年',
+										b:'荣膺ACCA年度杰出成就奖',
+										c:'中国健康产业互联网创新价值TOP10第一名',
+										d:'国际电子商务博览会颁发的2014年度电子商务应用创新奖',
+										e:'年度十佳移动优化网站'
+									},
+									{
+										a:'2015年',
+										b:'荣膺ACCA年度杰出成就奖',
+										c:'中国健康产业互联网创新价值TOP10第一名',
+										d:'国际电子商务博览会颁发的2014年度电子商务应用创新奖',
+										e:'年度十佳移动优化网站'
+									},
+									{
+										a:'2014年',
+										b:'荣膺ACCA年度杰出成就奖',
+										c:'中国健康产业互联网创新价值TOP10第一名',
+										d:'国际电子商务博览会颁发的2014年度电子商务应用创新奖',
+										e:'年度十佳移动优化网站'
+									},
+									{
+										a:'2013年',
+										b:'荣膺ACCA年度杰出成就奖',
+										c:'中国健康产业互联网创新价值TOP10第一名',
+										d:'国际电子商务博览会颁发的2014年度电子商务应用创新奖',
+										e:'年度十佳移动优化网站'
+									}
+								]
+							}
+						}
+
+				}
+				}
+
+			]
+	},
+	{
+	path:'/no3',
+		component:{
+			template:'#no3',
+				data(){
+				return {
+					arr:[
+						{
+							a:'医院常用医疗器械',
+							b:'#/no3/'
+						},
+						{
+							a:'家庭保健器材',
+							b:'#/no3/a'
+						},
+						{
+							a:'家庭护理设备',
+							b:'#/no3/b'
+						}
+					],
+					index:''
+				}
+			}
+		},
+		children:[
+			{
+				path:'/',
+				component:{
+					template:'#no8',
+					data(){
+						return {
+							index:'',
+							arr:[
+							{
+								a:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS8zOTdlYzc2OTljMWExZDBmNjE4NzNjNmUxMDgwZTU5Ny00MDB4MzAwLmpwZw_p_p100_p_3D_p_p100_p_3D.jpg',
+								b:'http://fast.qifeiye.com/FeiEditor/bitSite/images/zoom_in_black.png',
+								c:'产品展示3'
+							},
+							{
+								a:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS9jYjE1Zjk2YmRiNjZkMjU0NTlkZWMwNGQyNTJhNTBlYy00MDB4MzAwLmpwZw_p_p100_p_3D_p_p100_p_3D.jpg',
+								b:'http://fast.qifeiye.com/FeiEditor/bitSite/images/zoom_in_black.png',
+								c:'产品展示4'
+							},
+							
+							
+						]
+						}
+					}
+				}
+			},
+			{
+				path:'a',
+				component:{
+					template:'#no9',
+					data(){
+						return {
+							index:'',
+							arr:[
+								{
+								a:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS80YmY2MDIwMGY1ZmZhOWUwM2JiYzFiZWFiMjgxY2FhZi00MDB4MzAwLmpwZw_p_p100_p_3D_p_p100_p_3D.jpg',
+								b:'http://fast.qifeiye.com/FeiEditor/bitSite/images/zoom_in_black.png',
+								c:'产品展示1'
+							},
+							{
+								a:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS8xN2M0ZTNkYWMxMWM4M2ZjZmM3YTBiZmEzNjNjZWFkNy00MDB4MzAwLmpwZw_p_p100_p_3D_p_p100_p_3D.jpg',
+								b:'http://fast.qifeiye.com/FeiEditor/bitSite/images/zoom_in_black.png',
+								c:'产品展示2'
+							},
+							]
+						}
+					}
+				}
+			},
+			{
+				path:'b',
+				component:{
+					template:'#no10',
+					data(){
+						return {
+							index:'',
+							arr:[
+								{
+								a:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS9jYjE1Zjk2YmRiNjZkMjU0NTlkZWMwNGQyNTJhNTBlYy00MDB4MzAwLmpwZw_p_p100_p_3D_p_p100_p_3D.jpg',
+								b:'http://fast.qifeiye.com/FeiEditor/bitSite/images/zoom_in_black.png',
+								c:'产品展示5'
+							},
+							]
+						}
+					}
+				}
+			}
+		]
+	},
+	{
+		path:'/no4',
+			component:{
+			template:'#no4',
+			data(){
+				return {
+					arr:[
+						{
+							a:'公司新闻',
+							b:'#/no4/'
+						},
+						{
+							a:'行业动态',
+							b:'#/no4/a'
+						},
+						
+					],
+					index:''
+				}
+			},
+		},
+			children:[
+				{
+				path:'/',
+				component:{
+					template:'#no11',
+					data(){
+						return {
+							arr:[
+								{
+									a:'“50+”医疗棋局',
+								b:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNS8wMS8wMDA4ODcwXzM1MC0xNDB4MTEwLmpwZWc_p_p100_p_3D.png',
+								c:'发布日期：2015-01-22 分类：行业动态 ',
+								d:'“医疗服务价格是很重要的价格杠杆。”市卫计委副主任、新闻发言人钟东波表示，北京的医疗服务价格自1999年之后，一直没有调整，积累了较大的矛盾和问题。'
+							},
+							{
+									a:'	38种消费型保险之医疗保险篇',
+								b:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNS8wMS8wMDA4ODcyXzM1MC0xNDB4MTEwLmpwZWc_p_p100_p_3D.png',
+								c:'发布日期：2015-01-22 分类：行业动态 ',
+								d:'“医疗服务价格是很重要的价格杠杆。”市卫计委副主任、新闻发言人钟东波表示，北京的医疗服务价格自1999年之后，一直没有调整，积累了较大的矛盾和问题。'
+								},
+								{
+									a:'	医疗器械经营企业需承担不良事件的监测工作',
+								b:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNS8wMS8wMDA4ODY2XzM1MC0xNDB4MTEwLmpwZWc_p_p100_p_3D.png',
+								c:'发布日期：2015-01-22 分类：行业动态 ',
+								d:'“医疗服务价格是很重要的价格杠杆。”市卫计委副主任、新闻发言人钟东波表示，北京的医疗服务价格自1999年之后，一直没有调整，积累了较大的矛盾和问题。'
+								},
+								{
+									a:'医疗器械经营企业需监测报告不良事件',
+								b:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNS8wMS8wMDA4ODY4XzM1MC0xNDB4MTEwLmpwZWc_p_p100_p_3D.png',
+								c:'发布日期：2015-01-22 分类：行业动态 ',
+								d:'“医疗服务价格是很重要的价格杠杆。”市卫计委副主任、新闻发言人钟东波表示，北京的医疗服务价格自1999年之后，一直没有调整，积累了较大的矛盾和问题。'
+								},
+								{
+									a:'医疗器械GSP落地 18万家企业大洗牌',
+								b:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNy8wMi80NWEyYzAxMDEyZjkzOTA0ZGFlY2ZjMGFkOWJkOGE5Ni0xMDF4MzYucG5n.png',
+								c:'发布日期：2015-01-22 分类：行业动态 ',
+								d:'“医疗服务价格是很重要的价格杠杆。”市卫计委副主任、新闻发言人钟东波表示，北京的医疗服务价格自1999年之后，一直没有调整，积累了较大的矛盾和问题。'
+								}
+							]
+						
+						}
+					}
+				}
+			},
+			{
+				path:'a',
+				component:{
+					template:'#no12',
+					data(){
+						return {
+							arr:[
+								{
+									a:'	38种消费型保险之医疗保险篇',
+								b:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNS8wMS8wMDA4ODcyXzM1MC0xNDB4MTEwLmpwZWc_p_p100_p_3D.png',
+								c:'发布日期：2015-01-22 分类：行业动态 ',
+								d:'“医疗服务价格是很重要的价格杠杆。”市卫计委副主任、新闻发言人钟东波表示，北京的医疗服务价格自1999年之后，一直没有调整，积累了较大的矛盾和问题。'
+								},
+								{
+									a:'	医疗器械经营企业需承担不良事件的监测工作',
+								b:'https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNS8wMS8wMDA4ODY2XzM1MC0xNDB4MTEwLmpwZWc_p_p100_p_3D.png',
+								c:'发布日期：2015-01-22 分类：行业动态 ',
+								d:'“医疗服务价格是很重要的价格杠杆。”市卫计委副主任、新闻发言人钟东波表示，北京的医疗服务价格自1999年之后，一直没有调整，积累了较大的矛盾和问题。'
+								},
+							]
+						
+						}
+					}
+				}
+			},
+
+			]
+	},
+	{
+		path:'/no5',
+		component:{
+			template:'#no5',
+			data(){
+				return {
+					arr:[
+						{
+							a:'联系我们',
+							b:'#/no5/'
+						},
+						{
+							a:'加入我们',
+							b:'#/no5/a'
+						},
+						
+					],
+					index:''
+				}
+			},
+		},
+		children:[
+				{
+				path:'/',
+				component:{
+					template:'#no13',
+					data(){
+						return {
+							arr:[
+							{
+								a:'医疗器械有限公司',
+							},
+							{
+								b:'地址：临江市工业园区中心大道西',
+							},
+							{
+								c:'电话：4001-220-125',
+							},{
+								d:'邮箱：youjia@youjia.com'
+							}				
+							]
+						}
+					}
+				}
+			},
+			{
+				path:'a',
+				component:{
+					template:'#no14',
+					data(){
+						return {
+							arr:[
+								{
+									a:'1.当今最领先的响应式自助建站平台；',
+
+								},
+								{
+									a:'2.我们是响应式网站的倡导者，所有前端页面代码均采用HMLT5和CSS3实现；',
+									
+								},
+								{
+									a:'3.起飞页提供了海量精美网站模板和成品网站，几乎覆盖了当今各个行业。',
+									
+								}
+							],
+							arr1:[
+								{
+									a:'1.流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事；',
+
+								},
+								{
+									a:'2.起飞页提供了海量精美网站模板和成品网站，几乎覆盖了当今各个行业；',
+									
+								},
+								{
+									a:'3.迄今为止，起飞页用户的最短建站时间纪录为30分钟；',
+									
+								},
+								{
+									a:'4.起飞页的核心竞争力来自于它集流线式布局方案与可视化内容编辑于一体；',
+									
+								},
+								{
+									a:'5.当今最领先的响应式自助建站平台；',
+									
+								},
+								{
+									a:'6.起飞页的核心竞争力来自于它集流线式布局方案与可视化内容编辑于一体；',
+									
+								},
+								{
+									a:'7.流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。',
+									
+								}
+							]
+						
+						}
+					}
+				}
+			},
+
+			]
+	}
+
+	]
+	var router=new VueRouter({
+		routes,
+	})
+	new Vue({
+		el:'#box',
+		router,
+		data:{
+			type:false,
+			arr:[
+			{
+				a:'#/',
+				b:'首页'
+			},
+			{
+				a:'#/no2',
+				b:'关于我们',
+			},
+			{
+				a:'#/no3',
+				b:'产品展示',
+			},
+			{
+				a:'#/no4',
+				b:'新闻动态',
+			},
+			{
+				a:'#/no5',
+				b:'联系我们'
+			}
+
+
+
+
+
+
+			]
+		}
+	})
+	 var mySwiper = new Swiper ('.swiper-container', {
+    // direction: 'vertical', // 垂直切换选项
+    loop: true, // 循环模式选项
+    
+    // 如果需要分页器
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    
+    
+  })        
+</script>

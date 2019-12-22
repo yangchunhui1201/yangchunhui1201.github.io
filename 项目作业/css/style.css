@@ -1,0 +1,134 @@
+*{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+[v-cloak]{
+	display: none;
+}
+.header a:hover{
+	color:#fff;
+}
+.header{
+	padding-top: 10px;
+	height:80px;
+	padding:0  220px;
+	overflow: hidden;
+}
+.header img{
+	display: block;
+	padding-top: 10px;
+	width:183px;
+	height:65px;
+	float:left;
+	margin-right: 133px;
+}
+.header ul{
+	margin-top: 25px;
+	width:722px;
+	float:right;
+	color:#fff;
+}
+.header li{
+	width:129px;
+	height:29px;
+	text-align: center;
+	line-height: 29px;
+	float:left;
+	margin-right: 3px;
+
+}
+.header a{
+	color: #3191cc;
+	display: inline-block;
+	height:29px;
+}
+.header li:hover{
+	background-color: #3191cc;
+	cursor: pointer;
+}
+.header span{
+	display: inline-block;
+	width:129px;
+	height:29px;
+	line-height: 29px;
+	text-align:center;
+	font: normal 600 14px / 22px "微软雅黑",Helvetica,Arial,Verdana,sans-serif;
+}
+.li a{
+	color:#fff;
+	background-color: #3191cc;
+}
+.footer{
+	height:71px;
+	padding: 40px 100px 0;
+	overflow: hidden;
+
+}
+.footer img{
+	margin-top: 10px;
+	width:101px;
+	height:36px;
+	float:left;
+	margin-left: 200px;
+	margin-right: 70px;
+}
+.footer div{
+	float:left;
+	margin-top: 10px;
+	background-color: #F5F5F5;
+	width:736px;
+	height:39px;
+	padding-top: 10px;
+	line-height: 39px;
+	text-align: center;
+}
+.footer div p{
+	width:426px;
+	margin:0 auto;
+	height:25px;
+	margin-top: -5px;
+	font-family: "微软雅黑",Helvetica,Arial,Verdana,sans-serif;
+	position: relative;
+	
+}
+.footer div span{
+	word-spacing: normal;
+    color: #8d9095;
+    font-family: "微软雅黑",Helvetica,Arial,Verdana,sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+}
+.swiper-slide img{
+	width:100%;
+	height:498px;
+	cursor: pointer;
+}
+.a{
+	color:#555;
+}
+.a:hover{
+	color: #3191cc !important
+
+}
+.b{
+	color: #3191cc !important
+
+}
+.chan{
+	transition:all .6s;
+	background-color:rgba(174,174,174,.5) ;
+}
+.div4{
+	background-image: url('http://fast.qifeiye.com/FeiEditor/bitSite/images/zoom_in_black.png');
+	background-position: center -80px;
+
+    background-repeat: no-repeat;
+}
+.pin{
+	transition: all .6s;
+	background-image: url('http://fast.qifeiye.com/FeiEditor/bitSite/images/zoom_in_black.png');
+	background-position:50%;
+    background-repeat: no-repeat;
+}
