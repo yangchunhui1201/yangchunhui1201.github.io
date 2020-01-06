@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div class="box">
+			<div id="box" v-lee>
+				<div v-for="i in index">
+					{{i}}
+				</div>
+			</div>
+			<button @click="index++">+</button>
+				<button @click="index--">-</button>
+		</div>
+	</body>
+	<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		Vue.directive('lee', {
+			update(a, b) {
+				var div = a.getElementsByTagName('div')
+				console.log(div.length)
+			}
+		})
+		new Vue({
+			el: ".box",
+			data: {
+				index: 0
+			}
+		})
+	</script>
+
+</html>
